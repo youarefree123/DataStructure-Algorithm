@@ -55,6 +55,7 @@ void push(stack s ,int d){
 	tmp->data = d;
 	tmp->next = s->Top; //新结点指向老的Top
 	s->Top = tmp; //新结点成为新的Top
+	s->num++;
 }
 
 /*出栈*/
@@ -63,6 +64,7 @@ void pop(stack s){
 	Node tmp = s->Top;
 	s->Top = s->Top->next; 
 	free(tmp); //释放内存
+	if(s->num > 0) s->num--;
 }
 
 /*取栈顶元素*/
@@ -86,6 +88,7 @@ void put_stack(stack s){
 		printf("%d ",tmp->data);
 		tmp = tmp->next;
 	}
+	printf("元素个数为：%d\n",size(s));
 	printf("\n\n");
 }
 
