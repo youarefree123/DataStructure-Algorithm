@@ -1,6 +1,6 @@
 
 # 快速幂的模板题
-&emsp;&emsp;[平台](https://www.acwing.com/problem/content/91/)
+&emsp;&emsp;[测试平台](https://www.acwing.com/problem/content/91/)
 
 代码：
 ```c
@@ -26,4 +26,4 @@ int main(){
 
 ```
 
-[测试代码]()
+[测试代码](https://github.com/youarefree123/DataStructure-Algorithm/blob/master/Algorithm/%E5%BF%AB%E9%80%9F%E5%B9%82/Bin_Exp.cpp)
