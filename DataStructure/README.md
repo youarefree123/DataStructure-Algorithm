@@ -6,3 +6,4 @@
 -------- | -----
 栈  | [Srack_List](https://github.com/youarefree123/DataStructure-Algorithm/blob/master/DataStructure/Stack_List.cpp)
 队列 | [Queue_List](https://github.com/youarefree123/DataStructure-Algorithm/blob/master/DataStructure/Queue_List.cpp)
+二叉树 | [BinaryTree](https://github.com/youarefree123/DataStructure-Algorithm/blob/master/DataStructure/BinaryTree.cpp)
