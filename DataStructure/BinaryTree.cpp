@@ -10,7 +10,7 @@
  * void PostorderTraversal_1(BT) //递归版后序遍历
  * void postorderTraversal_2(BT) //迭代版后序遍历
  * void LevelorderTraversal(BT) //层序遍历
- * int tree_deep_1(BT) // 求二叉树深度(迭代版本)
+ * int tree_deep(BT) // 求二叉树深度
  * 
  */
 
@@ -32,14 +32,16 @@ typedef struct node
 typedef BT NODE;
 typedef BT Position;
 
-/*求二叉树深度,迭代版本*/
-int tree_deep_1(BT bt){
+/*求二叉树深度*/
+int tree_deep(BT bt){
 	if(bt == NULL)
 		return 0 ; 
 	int left = tree_deep_1(bt->lchild);
 	int right = tree_deep_1(bt->rchild);
 	return left <= right ? right+1 : left+1;  
 } 
+
+
 
 
 /*找到树中最大元素*/
@@ -225,6 +227,6 @@ int main(int argc, char const *argv[])
 	printf("层序遍历：");
 	LevelorderTraversal(bt);
 	printf("\n");
-	printf("该树深度为：%d\n",tree_deep_1(bt));
+	printf("该树深度为：%d\n",tree_deep(bt));
 	return 0;
 }
