@@ -1,27 +1,41 @@
 
-# 快速幂的模板题
-&emsp;&emsp;[测试平台](https://www.acwing.com/problem/content/91/)
+# 全排列的模板题
+&emsp;&emsp;[测试平台](http://codeup.cn/problem.php?cid=100000608&pid=0)
 
 代码：
 ```c
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
-typedef long long ll;
+//考虑死胡同和拐点
+int Stack[10]; //一个栈
+int check[11]; //检查数是否已经用过
+int n; 
 
+void dfs(int index){ //考虑过index个值了
+    if(index == n){ //死胡同
+    for(int i = 0 ; i < n ; i++){
+      printf("%d ",Stack[i]);;
+    }
+    printf("\n");
+    return;
+   }
 
-int main(){
-  ll a,b,p; // a^b mod p
-  scanf("%lld %lld %lld",&a,&b,&p);
-  ll ans = 1;
-  while(b>0){ //如果幂次没有到0
-  	if(b%2 == 1){
-  		ans = a*ans%p;
-  	}
-  	a = a*a % p;
-  	b = b>>1; //b除二
-  }
-	ans = ans%p; //最后的ans需要再次取余
-	printf("%lld\n",ans);
+   //岔路口
+   for(int i = 1 ; i <= n ; i++){
+    if(check[i] == 0){
+      Stack[index] = i;
+      check[i] = 1;
+      dfs(index+1);
+      check[i] = 0; //释放栈顶元素
+    }
+   }
+}
+
+int main(int argc, char const *argv[])
+{
+  cin>>n;
+  dfs(0);
+  return 0;
 }
 
 ```
